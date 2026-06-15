@@ -1,0 +1,29 @@
+@if (!loaded) {
+  <app-intro (finished)="loaded = true"></app-intro>
+}
+
+<app-navbar></app-navbar>
+
+
+
+<main>
+  <section id="home">
+    <app-hero></app-hero>
+  </section>
+
+  <section id="experience">
+    <app-experience></app-experience>
+  </section>
+
+  <section id="projects">
+    <app-projects></app-projects>
+  </section>
+
+  <section id="skills">
+    <app-skills></app-skills>
+  </section>
+
+  <section id="contact">
+    <app-contact></app-contact>
+  </section>
+</main>

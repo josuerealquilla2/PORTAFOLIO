@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CV ATS — Josue David Real Quilla</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11pt;
+    color: #111111;
+    background: #f0eeeb;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 32px 16px 64px;
+  }
+
+  .print-btn {
+    margin-bottom: 20px;
+    padding: 10px 24px;
+    background: #5b4fcf;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  .print-btn:hover { background: #4338ca; }
+
+  .page {
+    width: 700px;
+    background: #ffffff;
+    padding: 48px 52px;
+    box-shadow: 0 4px 20px rgba(0,0,0,.12);
+    line-height: 1.5;
+  }
+
+  .cv-name {
+    font-size: 22pt;
+    font-weight: bold;
+    color: #111111;
+    letter-spacing: -0.3px;
+  }
+
+  .cv-title {
+    font-size: 12pt;
+    color: #444444;
+    margin-top: 3px;
+    margin-bottom: 10px;
+  }
+
+  .cv-contact {
+    font-size: 10pt;
+    color: #333333;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 16px;
+    margin-bottom: 20px;
+  }
+
+  .cv-contact a { color: #333333; text-decoration: none; }
+
+  .section { margin-bottom: 18px; }
+
+  .section-title {
+    font-size: 11pt;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #111111;
+    border-bottom: 1.5px solid #333333;
+    padding-bottom: 4px;
+    margin-bottom: 10px;
+  }
+
+  p, li {
+    font-size: 10.5pt;
+    color: #222222;
+    line-height: 1.6;
+  }
+
+  ul { padding-left: 18px; }
+  ul li { margin-bottom: 3px; }
+
+  .entry { margin-bottom: 14px; }
+
+  .entry-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+  }
+
+  .entry-role {
+    font-size: 11pt;
+    font-weight: bold;
+    color: #111111;
+  }
+
+  .entry-date {
+    font-size: 10pt;
+    color: #555555;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .entry-company {
+    font-size: 10.5pt;
+    color: #333333;
+    font-style: italic;
+    margin-bottom: 4px;
+  }
+
+  .skills-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .skill-group { font-size: 10.5pt; color: #222222; }
+  .skill-label { font-weight: bold; }
+
+  @media print {
+    body { background: white; padding: 0; }
+    .print-btn { display: none; }
+    .page { box-shadow: none; width: 100%; padding: 36px 48px; }
+  }
+
+  @page { size: A4; margin: 1.2cm; }
+</style>
+</head>
+<body>
+
+<button class="print-btn" onclick="window.print()">&#128438; Guardar como PDF (Ctrl+P)</button>
+
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="cv-name">JOSUE DAVID REAL QUILLA</div>
+  <div class="cv-title">Desarrollador Fullstack — Angular | Django REST Framework | Python</div>
+  <div class="cv-contact">
+    <span>quillajosue92@gmail.com</span>
+    <span>604 901 396</span>
+    <span>Madrid, España</span>
+    <span><a href="https://github.com/josuerealquilla2">github.com/josuerealquilla2</a></span>
+    <span><a href="https://www.linkedin.com/in/josue-david-real-quilla-773549348">www.linkedin.com/in/josue-david-real-quilla-773549348</a></span>
+  </div>
+
+  <!-- RESUMEN PROFESIONAL -->
+  <div class="section">
+    <div class="section-title">Resumen Profesional</div>
+    <p>
+      Desarrollador fullstack con formación en DAW y experiencia práctica en el desarrollo de aplicaciones
+      web completas usando Angular (TypeScript) en el frontend y Django REST Framework (Python) en el backend.
+      Durante mis prácticas en Lobees desarrollé sistemas de automatización con integración de CRM, workflows
+      con n8n e implementé un servidor MCP (Model Context Protocol) para conectar agentes de IA con APIs REST.
+      Sólida base en PostgreSQL, JWT, Docker, Git y despliegue en Vercel. Orientado a escribir código limpio,
+      mantenible y centrado en la experiencia de usuario.
+    </p>
+  </div>
+
+  <!-- HABILIDADES TÉCNICAS -->
+  <div class="section">
+    <div class="section-title">Habilidades Técnicas</div>
+    <div class="skills-grid">
+      <div class="skill-group"><span class="skill-label">Lenguajes:</span> TypeScript, Python, JavaScript, HTML5, CSS3, SQL</div>
+      <div class="skill-group"><span class="skill-label">Frontend:</span> Angular 17+, SCSS, RxJS, Bootstrap, Tailwind CSS, React</div>
+      <div class="skill-group"><span class="skill-label">Backend:</span> Django, Django REST Framework, Node.js, REST API, JWT, MCP (Model Context Protocol)</div>
+      <div class="skill-group"><span class="skill-label">Bases de datos:</span> PostgreSQL, MySQL, SQLite</div>
+      <div class="skill-group"><span class="skill-label">DevOps / Herramientas:</span> Git, GitHub, Docker, Vercel, n8n, VS Code, Postman, Linux, npm</div>
+      <div class="skill-group"><span class="skill-label">Metodologías:</span> Responsive Design, Clean Code, MVC, REST, Scrum/Agile</div>
+    </div>
+  </div>
+
+  <!-- EXPERIENCIA PROFESIONAL -->
+  <div class="section">
+    <div class="section-title">Experiencia Profesional</div>
+
+    <div class="entry">
+      <div class="entry-top">
+        <div class="entry-role">Prácticas Técnicas — Integración &amp; Automatización de Sistemas</div>
+        <div class="entry-date">May 2026 — Jun 2026</div>
+      </div>
+      <div class="entry-company">Lobees · Madrid</div>
+      <ul>
+        <li>Desarrollé un sistema de automatización que integra el CRM de Lobees con workflows de n8n y un backend en Django para procesar leads de forma automática.</li>
+        <li>Implementé tres formularios secuenciales en Angular para la interacción con leads, con almacenamiento de respuestas en JSON estructurado.</li>
+        <li>Sincronización de logs y métricas con el CRM corporativo mediante llamadas a API REST.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-top">
+        <div class="entry-role">Prácticas Técnicas — Desarrollo de Agentes IA &amp; MCP</div>
+        <div class="entry-date">May 2026 — Jun 2026</div>
+      </div>
+      <div class="entry-company">Lobees · MPFORALL · Madrid</div>
+      <ul>
+        <li>Diseñé e implementé un servidor MCP (Model Context Protocol) en Node.js que expone las operaciones del CRM como herramientas consumibles por agentes de IA (Claude Code, ChatGPT).</li>
+        <li>Definí skills reutilizables para que los agentes ejecuten de forma autónoma el flujo completo: detección de tareas, procesamiento de leads y generación de dashboards HTML.</li>
+        <li>Realicé una comparativa técnica del rendimiento de tres agentes de IA sobre las mismas tareas del CRM.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-top">
+        <div class="entry-role">Desarrollador Frontend — Proyecto Académico</div>
+        <div class="entry-date">Mar 2024 — Dic 2024</div>
+      </div>
+      <div class="entry-company">EPSUM · Madrid</div>
+      <ul>
+        <li>Desarrollo de interfaces de usuario con Angular 17 para sistema de gestión académica.</li>
+        <li>Integración con API REST mediante HttpClient, manejo de autenticación JWT y guards de rutas.</li>
+        <li>Implementación de diseño responsive con SCSS y sistema de temas claro/oscuro con CSS Custom Properties.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- PROYECTOS DESTACADOS -->
+  <div class="section">
+    <div class="section-title">Proyectos Destacados</div>
+
+    <div class="entry">
+      <div class="entry-top">
+        <div class="entry-role">GitLens Explorer</div>
+        <div class="entry-date">Feb 2025 — Jun 2025</div>
+      </div>
+      <div class="entry-company">Fullstack Developer · Angular + Django REST Framework + PostgreSQL · <a href="https://github.com/josuerealquilla2/GitLens">github.com/josuerealquilla2/GitLens</a></div>
+      <ul>
+        <li>SPA en Angular para explorar repositorios GitHub con dashboards de estadísticas, contribuciones y gestión de tareas.</li>
+        <li>Integración de 8+ endpoints de la API de GitHub con sistema de caché para reducir llamadas externas.</li>
+        <li>Tiempo de carga inferior a 1.5 segundos con más de 20 componentes Angular optimizados. Demo en producción en Vercel.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-top">
+        <div class="entry-role">Task Manager App</div>
+        <div class="entry-date">Oct 2024 — Ene 2025</div>
+      </div>
+      <div class="entry-company">Fullstack Developer · Angular + Django + Docker + PostgreSQL · <a href="https://github.com/josuerealquilla2/Gestionador-de-Tareas-">github.com/josuerealquilla2/Gestionador-de-Tareas-</a></div>
+      <ul>
+        <li>Aplicación fullstack con autenticación JWT, roles de usuario, categorización de tareas, filtros avanzados y métricas de productividad.</li>
+        <li>Backend escalable con Django REST Framework probado con 50+ usuarios concurrentes y 80% de cobertura de tests.</li>
+        <li>Dockerizado con docker-compose para entornos de desarrollo y producción reproducibles.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- EDUCACIÓN -->
+  <div class="section">
+    <div class="section-title">Educación</div>
+    <div class="entry">
+      <div class="entry-top">
+        <div class="entry-role">Técnico Superior en Desarrollo de Aplicaciones Web (DAW)</div>
+        <div class="entry-date">2024 — 2026</div>
+      </div>
+      <div class="entry-company">EPSUM · Madrid</div>
+      <p style="font-size:10pt; color:#555; margin-top:4px;">En curso · Graduación: 25 de junio de 2026</p>
+    </div>
+  </div>
+
+
+  <!-- IDIOMAS -->
+  <div class="section">
+    <div class="section-title">Idiomas</div>
+    <ul>
+      <li><strong>Español:</strong> Nativo</li>
+      <li><strong>Inglés:</strong> Básico (A2) — lectura técnica de documentación</li>
+    </ul>
+  </div>
+
+</div>
+
+</body>
+</html>

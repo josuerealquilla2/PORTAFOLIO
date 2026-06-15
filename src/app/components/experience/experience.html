@@ -1,0 +1,65 @@
+<div class="container">
+  <div class="section-header reveal">
+    <span class="section-tag">{{ t().experience.tag }}</span>
+    <h2>{{ t().experience.title }}</h2>
+    <p>{{ t().experience.desc }}</p>
+  </div>
+
+  <div class="experience-list">
+    @for (exp of experiences; track exp.company; let i = $index) {
+      <div class="exp-card reveal" [class]="'reveal-delay-' + (i + 1)">
+        <div class="exp-icon">
+          @for (cls of exp.logoClass; track cls) {
+            <i [class]="cls"></i>
+          }
+        </div>
+        <div class="exp-body">
+          <div class="exp-header">
+            <div>
+              <h3 class="exp-role">{{ exp.role }}</h3>
+              <p class="exp-company">{{ exp.company }}</p>
+            </div>
+            <span class="exp-period">{{ exp.period }}</span>
+          </div>
+          <p class="exp-desc">{{ exp.description }}</p>
+          <div class="exp-tags">
+            @for (tag of exp.tags; track tag) {
+              <span class="tech-badge">{{ tag }}</span>
+            }
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+
+  <!-- EDUCACIÓN -->
+  <div class="edu-section reveal">
+    <div class="edu-label">Educación</div>
+    <div class="exp-card edu-card">
+      <div class="exp-icon">
+        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" style="color: var(--accent)">
+          <path d="M22 10v6M2 10l10-5 10 5-10 5-10-5z"/>
+          <path d="M6 12v5c0 1.657 2.686 3 6 3s6-1.343 6-3v-5"/>
+        </svg>
+      </div>
+      <div class="exp-body">
+        <div class="exp-header">
+          <div>
+            <h3 class="exp-role">Técnico Superior en Desarrollo de Aplicaciones Web</h3>
+            <p class="exp-company">EPSUM · Madrid</p>
+          </div>
+          <span class="exp-period">2024 — Jun 2026</span>
+        </div>
+        <p class="exp-desc">Formación en desarrollo web fullstack: diseño de interfaces, programación backend, bases de datos relacionales, despliegue de aplicaciones y metodologías ágiles. Graduación: 25 de junio de 2026.</p>
+        <div class="exp-tags">
+          <span class="tech-badge">DAW</span>
+          <span class="tech-badge">HTML / CSS</span>
+          <span class="tech-badge">JavaScript</span>
+          <span class="tech-badge">Python</span>
+          <span class="tech-badge">SQL</span>
+          <span class="tech-badge">En curso</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,356 @@
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  padding-top: var(--nav-height);
+  background: #000000;
+}
+
+:host-context([data-theme="light"]) .hero {
+  background: #F8F8F8;
+}
+
+/* ─── Marquee fondo ──────────────────────── */
+.hero-marquee {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.04;
+}
+
+.marquee-track {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  animation: marquee 25s linear infinite;
+  gap: 1.5rem;
+}
+
+.marquee-item {
+  font-size: clamp(5rem, 12vw, 10rem);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  color: var(--accent-light);
+  white-space: nowrap;
+}
+
+.marquee-dot {
+  font-size: 3rem;
+  color: var(--accent);
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* ─── Content ────────────────────────────── */
+.hero-content {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 5rem;
+  padding-top: 3rem;
+  padding-bottom: 6rem;
+}
+
+/* ─── Greeting multidioma ────────────────── */
+.hero-greeting-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  min-height: 2rem;
+  overflow: hidden;
+}
+
+.hero-greeting-label {
+  font-size: 0.95rem;
+  color: var(--accent);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.hero-greeting-word {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(12px);
+  filter: blur(4px);
+  transition: opacity 0.35s ease, transform 0.35s ease, filter 0.35s ease;
+
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+/* ─── Nombre letra a letra ───────────────── */
+.hero-name {
+  font-size: clamp(3rem, 7vw, 6rem);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  margin-bottom: 14px;
+  color: var(--text-primary);
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+
+.name-letter {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(60px) rotateX(-40deg);
+  animation: letterDrop 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.name-space {
+  display: inline-block;
+  width: 0.3em;
+}
+
+@keyframes letterDrop {
+  to {
+    opacity: 1;
+    transform: translateY(0) rotateX(0);
+  }
+}
+
+/* ─── Subtítulo y bio ────────────────────── */
+.hero-title {
+  font-size: clamp(1.25rem, 3vw, 2rem);
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin-bottom: 24px;
+
+  .accent {
+    color: var(--accent);
+    font-weight: 700;
+  }
+}
+
+.hero-bio {
+  max-width: 520px;
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-bottom: 36px;
+}
+
+/* ─── Botones y sociales ─────────────────── */
+.hero-actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 36px;
+}
+
+.hero-socials {
+  display: flex;
+  gap: 12px;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+  font-size: 1.3rem;
+  background: var(--bg-card);
+  box-shadow: var(--shadow);
+  transition: border-color var(--transition), color var(--transition), box-shadow var(--transition), transform var(--transition);
+
+  &:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    box-shadow: 0 4px 16px rgba(255, 255, 255, 0.12);
+    transform: translateY(-3px);
+  }
+}
+
+/* ─── Imagen perfil ──────────────────────── */
+.hero-image-wrap {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.hero-image-entrance {
+  animation: imageReveal 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.5s both;
+}
+
+@keyframes imageReveal {
+  from {
+    opacity: 0;
+    transform: scale(0.82) translateY(30px);
+    filter: blur(12px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    filter: blur(0);
+  }
+}
+
+.hero-image-ring {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ffffff, #888888);
+  padding: 4px;
+  box-shadow: 0 0 50px rgba(255, 255, 255, 0.18), 0 12px 40px rgba(0, 0, 0, 0.5);
+  animation: ringPulse 4s ease-in-out infinite;
+}
+
+@keyframes ringPulse {
+  0%, 100% { box-shadow: 0 0 40px rgba(255, 255, 255, 0.12), 0 12px 48px rgba(0, 0, 0, 0.45); }
+  50%       { box-shadow: 0 0 70px rgba(255, 255, 255, 0.28), 0 12px 60px rgba(0, 0, 0, 0.55); }
+}
+
+.hero-image-placeholder {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: #0a0a0a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: -0.05em;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+}
+
+:host-context([data-theme="light"]) .hero-image-placeholder {
+  background: #F0F0F0;
+}
+
+.hero-image-badge {
+  position: absolute;
+  bottom: -16px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 10px 22px;
+  box-shadow: var(--shadow-md);
+
+  i {
+    font-size: 1.6rem;
+    transition: transform 0.2s ease;
+
+    &:hover { transform: translateY(-3px) scale(1.15); }
+  }
+}
+
+/* ─── Orbes decorativos ──────────────────── */
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(40px);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.orb-1 {
+  width: 200px;
+  height: 200px;
+  background: rgba(255, 255, 255, 0.04);
+  top: -40px;
+  right: -40px;
+  animation: orbFloat 6s ease-in-out infinite;
+}
+
+.orb-2 {
+  width: 140px;
+  height: 140px;
+  background: rgba(255, 255, 255, 0.03);
+  bottom: 10px;
+  left: -30px;
+  animation: orbFloat 8s ease-in-out infinite reverse;
+}
+
+@keyframes orbFloat {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50%       { transform: translateY(-20px) scale(1.06); }
+}
+
+/* ─── Scroll indicator ───────────────────── */
+.scroll-indicator {
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  z-index: 1;
+
+  .scroll-line {
+    width: 1.5px;
+    height: 48px;
+    background: linear-gradient(to bottom, var(--accent), transparent);
+    animation: scrollPulse 2s ease-in-out infinite;
+  }
+
+  span {
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+}
+
+@keyframes scrollPulse {
+  0%, 100% { opacity: 0.3; transform: scaleY(1); }
+  50%       { opacity: 1;   transform: scaleY(1.12); }
+}
+
+/* ─── Responsive ─────────────────────────── */
+@media (max-width: 900px) {
+  .hero-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 3rem;
+  }
+
+  .hero-image-wrap { margin: 0 auto; }
+  .hero-greeting-wrap, .hero-actions, .hero-socials { justify-content: center; }
+  .hero-name { justify-content: center; }
+  .hero-bio { margin-left: auto; margin-right: auto; }
+}
+
+@media (max-width: 480px) {
+  .hero-image-ring { width: 220px; height: 220px; }
+}

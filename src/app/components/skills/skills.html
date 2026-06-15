@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="section-header reveal">
+    <span class="section-tag">{{ t().skills.tag }}</span>
+    <h2>{{ t().skills.title }}</h2>
+    <p>{{ t().skills.desc }}</p>
+  </div>
+
+  <div class="skills-layout">
+
+    <div class="skills-tabs reveal">
+      @for (cat of categories; track cat.number; let i = $index) {
+        <button
+          class="skill-tab"
+          [class.active]="active === i"
+          (click)="active = i">
+          <span class="tab-num">{{ cat.number }}</span>
+          <span>{{ t().skills.categories[cat.key] }}</span>
+        </button>
+      }
+    </div>
+
+    <div class="skills-grid reveal reveal-delay-2">
+      @for (skill of categories[active].skills; track skill.name) {
+        <div class="skill-item">
+          <i [class]="skill.icon"></i>
+          <span>{{ skill.name }}</span>
+        </div>
+      }
+    </div>
+
+  </div>
+</div>
