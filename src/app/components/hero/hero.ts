@@ -21,7 +21,7 @@ export class Hero implements OnInit, OnDestroy {
 
   private greetings = [
     'Hola', 'Hello', 'Bonjour', 'नमस्ते',
-    'こんにちは', '안녕하세요', 'Ciao', 'Olá', 'Hei', 'Привет'
+    'Ciao', 'Olá', 'Hei', 'Привет'
   ];
 
   currentGreetingIdx = signal(0);
