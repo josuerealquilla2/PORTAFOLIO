@@ -32,7 +32,7 @@ export class Intro implements OnInit, OnDestroy {
       } else {
         clearInterval(this.timer);
         this.exiting.set(true);
-        setTimeout(() => { this.visible.set(false); this.finished.emit(); }, 50);
+        setTimeout(() => { this.visible.set(false); this.finished.emit(); }, 300);
       }
     }, this.stepMs);
   }
