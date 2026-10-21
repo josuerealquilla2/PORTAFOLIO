@@ -15,8 +15,7 @@ import { Component, OnInit, OnDestroy, signal, output } from '@angular/core';
   styleUrl: './intro.scss',
 })
 export class Intro implements OnInit, OnDestroy {
-  greetings = ['Hola', 'Hello', 'Bonjour', 'Ciao', 'Olá',
-    'Guten Tag', 'こんにちは', 'नमस्ते', 'مرحبا', '你好'];
+  greetings = ['Hola', 'Hello', 'Bonjour', 'Ciao', 'Olá'];
 
   index = signal(0);
   visible = signal(true);
@@ -24,7 +23,7 @@ export class Intro implements OnInit, OnDestroy {
   finished = output<void>();
 
   private timer?: ReturnType<typeof setInterval>;
-  private readonly stepMs = 375;
+  private readonly stepMs = 500;
 
   ngOnInit(): void {
     this.timer = setInterval(() => {
