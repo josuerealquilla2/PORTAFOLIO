@@ -36,8 +36,8 @@ export class Hero implements OnInit, OnDestroy {
       setTimeout(() => {
         this.currentGreetingIdx.update(i => (i + 1) % this.greetings.length);
         this.greetingVisible.set(true);
-      }, 350);
-    }, 2200);
+      }, 250);
+    }, 1500);
   }
 
   ngOnDestroy(): void {
